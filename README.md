@@ -14,7 +14,7 @@ Para creár el contenedor utilizámos el comando
 y con -`sudo docker ps -a` comprobamos que este está creado
 
 
->3. 3. Si quieres poder acceder desde el navegador de tu equipo,
+>3.Si quieres poder acceder desde el navegador de tu equipo,
 >¿que debes hacer? Utiliza bind mount para que el directorio del apache2
 >'htdocs' esté montado un directorio que tu elijas.
 
@@ -29,3 +29,17 @@ Una vez echo esto, creámos un nuevo directório:
 
 ejecutamos el siguiente comando para crear el contenedor con el directorio mapeado:
 -`sudo docker run -d --name dam_web1 -p 8000:80 -v /home/dam2/mi_apache_host:/usr/local/apache2/htdocs httpd:2.4`
+
+>4. Realiza un 'hola mundo' en html y comprueba que accedes desde el navegador.
+
+Creámos un archivo .html y lo metemos en la carpéta /home/dam2/mi_apache_host, luego lo abrímos
+en el navegador:-`http://10.0.9.151:8000` , la sintaxis del hola mundo es la siguiente: 
+
+<html>
+     <head>
+         <title>Hola Mundo</title>
+     </head>
+     <body>
+         <h1>Hola Mundo</h1>
+     </body>
+ </html>
