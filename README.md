@@ -52,8 +52,27 @@ Creámos el contenedor dam_web2 con puertos diferentes:
 -`sudo docker run -d --name dam_web2 -p 9080:80 -v /home/dam2/mi_apache_host:/usr/local/apache2/htdocs httpd:2.4`
 Comprobamos que funciona con -`sudo docker ps`
 
->6. Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador: http://localhost:9080 http://localhost:8000
+>6. Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador:
+ -`http://localhost:9080` -`http://localhost:8000`
 
 Acedemos al navegador e introducimos las siguientes sentencias:
+-`http://10.0.9.151:9080`
+-`http://10.0.9.151:8000`
+
+>7. Realiza modificaciones de la página y comprueba que los dos servidores 'sirven' la misma página
+
+Modificámos el HTML:
+```
+<html>
+     <head>
+         <title>Hola Diego</title>
+     </head>
+     <body>
+         <h2><strong>Ambos servicios han sido cambiados<strong></h2>
+         <p style="color: pink;">!!!Por la Horda¡¡¡</p>
+     </body>
+ </html>
+```
+Despues acedemos al navegador e introducimos las siguientes sentencias:
 -`http://10.0.9.151:9080`
 -`http://10.0.9.151:8000`
