@@ -35,18 +35,25 @@ ejecutamos el siguiente comando para crear el contenedor con el directorio mapea
 Creámos un archivo .html y lo metemos en la carpéta /home/dam2/mi_apache_host, luego lo abrímos
 en el navegador:-`http://10.0.9.151:8000` , la sintaxis del hola mundo es la siguiente: 
 
- ><html>
- >    <head>
- >        <title>Hola Mundo</title>
- >    </head>
- >    <body>
- >        <h1>Hola Mundo</h1>
- >    </body>
- ></html>
-
+```
+<html>
+     <head>
+         <title>Hola Mundo</title>
+     </head>
+     <body>
+         <h1>Hola Mundo</h1>
+     </body>
+ </html>
+```
 
 >5. Crea otro contenedor 'dam_web2' con el mismo bind mount y a otro puerto, por ejemplo 9080.
 
 Creámos el contenedor dam_web2 con puertos diferentes:
 -`sudo docker run -d --name dam_web2 -p 9080:80 -v /home/dam2/mi_apache_host:/usr/local/apache2/htdocs httpd:2.4`
 Comprobamos que funciona con -`sudo docker ps`
+
+>6. Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador: http://localhost:9080 http://localhost:8000
+
+Acedemos al navegador e introducimos las siguientes sentencias:
+-`http://10.0.9.151:9080`
+-`http://10.0.9.151:8000`
